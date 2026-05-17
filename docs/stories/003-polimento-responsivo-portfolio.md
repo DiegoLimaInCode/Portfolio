@@ -39,6 +39,8 @@ GPT-5
 - `npx playwright screenshot --wait-for-timeout=1000 --viewport-size=1024,768 ...` gerou `test-results/portfolio-1024.png`.
 - `npx playwright screenshot --wait-for-timeout=1000 --viewport-size=1440,900 ...` gerou `test-results/portfolio-1440.png`.
 - `Test-Path package.json` retornou `False`; `npm run lint`, `npm run typecheck` e `npm test` nao se aplicam neste site estatico sem projeto Node.
+- `npx playwright screenshot --wait-for-timeout=1000 --viewport-size=1365,768 ...` gerou `test-results/portfolio-hero-1365.png` para validar uma unica foto no hero desktop.
+- `npx playwright screenshot --wait-for-timeout=1000 --viewport-size=390,844 ...` gerou `test-results/portfolio-hero-390.png` para validar uma unica foto no hero mobile.
 
 ### Completion Notes List
 
@@ -46,6 +48,7 @@ GPT-5
 - CSS responsivo refinado para hero, badges, cards, terminal, contato, footer e menu em 360px, 390px, 430px, tablet e desktop.
 - Menu mobile fecha ao redimensionar para desktop para evitar estado `aria-expanded` inconsistente.
 - Segunda rodada mobile-first adicionou cartao compacto com foto/nome no hero, reduziu peso do titulo em celulares e removeu duplicacao da foto no painel tecnico mobile.
+- Ajuste final removeu o cartao extra com foto fora do quadrado, mantendo apenas o resumo profissional dentro do painel principal.
 
 ### File List
 
@@ -59,3 +62,4 @@ GPT-5
 - 2026-05-17: Story criada para polimento responsivo do portfolio estatico.
 - 2026-05-17: Polimento responsivo implementado e validado em viewports mobile e desktop.
 - 2026-05-17: Primeira dobra mobile refinada para melhorar impacto visual para visitantes em celular.
+- 2026-05-17: Foto duplicada no hero removida; painel principal virou a unica area com foto e informacoes pessoais.
