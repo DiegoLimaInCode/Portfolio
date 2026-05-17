@@ -29,6 +29,12 @@ if (menuButton && nav) {
       closeMenu();
     }
   });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 960) {
+      closeMenu();
+    }
+  });
 }
 
 const reducedMotionMedia = window.matchMedia("(prefers-reduced-motion: reduce)");

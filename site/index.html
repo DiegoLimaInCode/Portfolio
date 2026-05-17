@@ -35,13 +35,20 @@
         <span class="brand-copy">Diego Lima</span>
       </a>
 
-      <button class="menu-button" type="button" aria-label="Menu de navegação" aria-expanded="false" data-menu-button>
+      <button
+        class="menu-button"
+        type="button"
+        aria-label="Menu de navegação"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        data-menu-button
+      >
         <span></span>
         <span></span>
         <span></span>
       </button>
 
-      <nav class="site-nav" data-nav aria-label="Navegação principal">
+      <nav class="site-nav" id="primary-navigation" data-nav aria-label="Navegação principal">
         <a href="#perfil">Perfil</a>
         <a href="#competencias">Competências</a>
         <a href="#cases">Cases</a>
@@ -55,6 +62,14 @@
       <section class="hero section" id="inicio">
         <div class="hero-copy">
           <p class="section-label reveal">Full Stack .NET Developer · Nilópolis, RJ</p>
+          <div class="mobile-hero-card reveal" aria-label="Resumo rápido de Diego Lima">
+            <img src="./assets/profile-photo.jpeg" width="96" height="96" alt="" aria-hidden="true" />
+            <div>
+              <strong>Diego Lima</strong>
+              <span>Full Stack .NET Developer</span>
+              <small>Disponível para oportunidades · RJ</small>
+            </div>
+          </div>
           <h1 class="reveal">Aplicações .NET com base forte em backend, dados e manutenção de longo prazo.</h1>
           <p class="hero-text reveal">
             Desenvolvedor Full Stack no ecossistema .NET, com foco em C#, ASP.NET, ASP.NET MVC, Blazor,
