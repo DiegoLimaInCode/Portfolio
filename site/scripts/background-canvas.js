@@ -1,52 +1,14 @@
-const menuButton = document.querySelector("[data-menu-button]");
-const nav = document.querySelector("[data-nav]");
+// background-canvas.js - Animação de fundo sutil de engenharia de software
 
-if (menuButton && nav) {
-  const closeMenu = () => {
-    nav.classList.remove("is-open");
-    menuButton.setAttribute("aria-expanded", "false");
-  };
-
-  menuButton.addEventListener("click", () => {
-    const isOpen = nav.classList.toggle("is-open");
-    menuButton.setAttribute("aria-expanded", String(isOpen));
-  });
-
-  nav.addEventListener("click", (event) => {
-    if (event.target instanceof HTMLAnchorElement) {
-      closeMenu();
-    }
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      closeMenu();
-    }
-  });
-
-  document.addEventListener("click", (event) => {
-    if (!nav.contains(event.target) && !menuButton.contains(event.target)) {
-      closeMenu();
-    }
-  });
-
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 960) {
-      closeMenu();
-    }
-  });
-}
-
-const reducedMotionMedia = window.matchMedia("(prefers-reduced-motion: reduce)");
-const mobileMedia = window.matchMedia("(max-width: 960px)");
-
-const shouldReduceMotion = () => reducedMotionMedia.matches || mobileMedia.matches;
-
-const setupBackgroundCanvas = () => {
+function setupBackgroundCanvas() {
   const canvas = document.querySelector("[data-bg-canvas]");
   if (!(canvas instanceof HTMLCanvasElement)) {
     return;
   }
+
+  const reducedMotionMedia = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const mobileMedia = window.matchMedia("(max-width: 960px)");
+  const shouldReduceMotion = () => reducedMotionMedia.matches || mobileMedia.matches;
 
   const codeLines = [
     "dotnet build --configuration Release",
@@ -127,8 +89,8 @@ const setupBackgroundCanvas = () => {
         y: Math.random() * state.height,
         width,
         height,
-        speed: 0.035 + Math.random() * 0.045,
-        alpha: 0.08 + Math.random() * 0.06,
+        speed: 0.015 + Math.random() * 0.025, // Velocidade reduzida para maior sobriedade
+        alpha: 0.03 + Math.random() * 0.03, // Opacidade muito sutil
         phase: index * 18,
         lines: Array.from({ length: lineCount }, () => pick(codeLines))
       };
@@ -137,8 +99,8 @@ const setupBackgroundCanvas = () => {
     state.streams = Array.from({ length: streamCount }, () => ({
       x: Math.random() * state.width,
       y: Math.random() * state.height,
-      speed: 0.08 + Math.random() * 0.12,
-      alpha: 0.045 + Math.random() * 0.055,
+      speed: 0.03 + Math.random() * 0.06, // Movimento lento
+      alpha: 0.012 + Math.random() * 0.018, // Quase imperceptível no fundo
       text: pick(codeLines),
       size: 10 + Math.random() * 2
     }));
@@ -146,10 +108,10 @@ const setupBackgroundCanvas = () => {
     state.glyphs = Array.from({ length: glyphCount }, () => ({
       x: Math.random() * state.width,
       y: Math.random() * state.height,
-      vx: (Math.random() - 0.5) * 0.08,
-      vy: 0.025 + Math.random() * 0.055,
+      vx: (Math.random() - 0.5) * 0.04,
+      vy: 0.01 + Math.random() * 0.025, // Movimento sutil
       glyph: pick(glyphs),
-      alpha: 0.05 + Math.random() * 0.08,
+      alpha: 0.02 + Math.random() * 0.03, // Muito sutil
       size: 10 + Math.random() * 5
     }));
   };
@@ -169,20 +131,23 @@ const setupBackgroundCanvas = () => {
     const pulse = 0.75 + Math.sin((tick + terminal.phase) / 80) * 0.25;
     const alpha = terminal.alpha * pulse;
 
-    ctx.fillStyle = `rgba(10, 18, 23, ${alpha})`;
-    ctx.strokeStyle = `rgba(111, 231, 220, ${alpha * 1.6})`;
+    // Fundo do card terminal flutuante
+    ctx.fillStyle = `rgba(3, 7, 18, ${alpha})`;
+    ctx.strokeStyle = `rgba(34, 211, 238, ${alpha * 1.5})`; // Ciano sutil
     ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.roundRect(terminal.x, terminal.y, terminal.width, terminal.height, 8);
     ctx.fill();
     ctx.stroke();
 
-    ctx.fillStyle = `rgba(111, 231, 220, ${alpha * 1.4})`;
-    ctx.font = "500 10px Cascadia Mono, Cascadia Code, Consolas, monospace";
+    // Texto de cabeçalho
+    ctx.fillStyle = `rgba(34, 211, 238, ${alpha * 1.4})`;
+    ctx.font = "500 10px JetBrains Mono, Cascadia Code, Consolas, monospace";
     ctx.fillText("> runtime", terminal.x + 14, terminal.y + 13);
 
-    ctx.fillStyle = `rgba(219, 235, 237, ${alpha * 1.7})`;
-    ctx.font = "400 10px Cascadia Mono, Cascadia Code, Consolas, monospace";
+    // Linhas de código do terminal
+    ctx.fillStyle = `rgba(241, 245, 249, ${alpha * 1.7})`;
+    ctx.font = "400 10px JetBrains Mono, Cascadia Code, Consolas, monospace";
     terminal.lines.forEach((line, index) => {
       const clipped = line.length > 42 ? `${line.slice(0, 39)}...` : line;
       ctx.fillText(clipped, terminal.x + 14, terminal.y + 36 + index * 19);
@@ -209,8 +174,8 @@ const setupBackgroundCanvas = () => {
         stream.text = pick(codeLines);
       }
 
-      ctx.font = `400 ${stream.size}px Cascadia Mono, Cascadia Code, Consolas, monospace`;
-      ctx.fillStyle = `rgba(167, 180, 189, ${stream.alpha})`;
+      ctx.font = `400 ${stream.size}px JetBrains Mono, Cascadia Code, Consolas, monospace`;
+      ctx.fillStyle = `rgba(148, 163, 184, ${stream.alpha})`;
       ctx.fillText(stream.text, stream.x, stream.y);
     }
 
@@ -222,8 +187,8 @@ const setupBackgroundCanvas = () => {
       if (node.x > state.width + 30) node.x = -30;
       if (node.y > state.height + 30) node.y = -30;
 
-      ctx.font = `600 ${node.size}px Cascadia Mono, Cascadia Code, Consolas, monospace`;
-      ctx.fillStyle = `rgba(111, 231, 220, ${node.alpha})`;
+      ctx.font = `600 ${node.size}px JetBrains Mono, Cascadia Code, Consolas, monospace`;
+      ctx.fillStyle = `rgba(34, 211, 238, ${node.alpha})`;
       ctx.fillText(node.glyph, node.x, node.y);
     }
 
@@ -252,82 +217,4 @@ const setupBackgroundCanvas = () => {
   window.addEventListener("resize", handleResize);
   reducedMotionMedia.addEventListener("change", start);
   mobileMedia.addEventListener("change", start);
-};
-
-const setupTerminalTyping = () => {
-  const output = document.querySelector("[data-terminal-output]");
-  if (!(output instanceof HTMLElement)) {
-    return;
-  }
-
-  const fallback = output.innerHTML;
-  if (shouldReduceMotion()) {
-    output.innerHTML = fallback;
-    return;
-  }
-
-  const lines = [
-    { text: "$ dotnet profile", command: true },
-    { text: "C# | .NET | ASP.NET MVC" },
-    { text: "Blazor | SQL | GitHub" },
-    { text: "n8n | APIs | manutenção" },
-    { text: "" },
-    { text: "$ focus", command: true },
-    { text: "web corporativo com" },
-    { text: "clareza e evolução contínua" }
-  ];
-
-  let lineIndex = 0;
-  let charIndex = 0;
-  const renderedLines = [];
-
-  const escapeHtml = (value) =>
-    value
-      .replaceAll("&", "&amp;")
-      .replaceAll("<", "&lt;")
-      .replaceAll(">", "&gt;")
-      .replaceAll('"', "&quot;")
-      .replaceAll("'", "&#039;");
-
-  const renderLine = (line, visibleText) => {
-    const escaped = escapeHtml(visibleText);
-    return line.command ? `<span>${escaped}</span>` : escaped;
-  };
-
-  const typeNext = () => {
-    output.classList.add("terminal-cursor");
-
-    if (shouldReduceMotion()) {
-      output.classList.remove("terminal-cursor");
-      output.innerHTML = fallback;
-      return;
-    }
-
-    if (lineIndex >= lines.length) {
-      output.classList.add("terminal-cursor");
-      return;
-    }
-
-    const currentLine = lines[lineIndex];
-    if (charIndex < currentLine.text.length) {
-      charIndex += 1;
-      output.innerHTML = [
-        ...renderedLines,
-        renderLine(currentLine, currentLine.text.slice(0, charIndex))
-      ].join("\n");
-      window.setTimeout(typeNext, 18 + Math.random() * 18);
-      return;
-    }
-
-    renderedLines.push(renderLine(currentLine, currentLine.text));
-    lineIndex += 1;
-    charIndex = 0;
-    output.innerHTML = renderedLines.join("\n");
-    window.setTimeout(typeNext, lineIndex === 5 ? 360 : 120);
-  };
-
-  window.setTimeout(typeNext, 450);
-};
-
-setupBackgroundCanvas();
-setupTerminalTyping();
+}

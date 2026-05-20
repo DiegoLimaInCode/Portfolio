@@ -5,9 +5,9 @@ Primeira versao estatica do portfolio pessoal, com posicionamento em desenvolvim
 ## Estrutura
 
 - `index.html`: conteudo e secoes da pagina.
-- `styles.css`: tokens visuais, layout responsivo e componentes.
-- `script.js`: comportamento do menu mobile.
-- `assets/`: imagens vetoriais usadas no layout.
+- `styles/`: pasta contendo as folhas de estilo divididas por responsabilidade (`tokens.css`, `base.css`, `layout.css`, `components.css`, `responsive.css`).
+- `scripts/`: pasta contendo os scripts JavaScript modulares (`menu.js`, `background-canvas.js`, `terminal.js`, `main.js`).
+- `assets/`: pasta contendo as fotos e ilustracoes organizadas em subpastas (`images/` e `projects/`).
 
 ## Como abrir
 
@@ -17,8 +17,8 @@ Abra `site/index.html` diretamente no navegador.
 
 - Trocar o nome, descricao e links de contato.
 - Substituir os projetos de exemplo por projetos reais.
-- Atualizar `assets/avatar.svg` por uma foto ou ilustracao pessoal.
-- Informar o dominio publico final para configurar `canonical`, `og:url` e imagem social absoluta.
+- Atualizar `assets/images/avatar.svg` por uma foto ou ilustracao pessoal.
+- Informar o dominio publico final para configurar `canonical`, `og:url`, `og:image` e `twitter:image`.
 - Quando quiser evoluir para React/Vite, criar uma alteracao separada para preservar a versao estatica atual.
 
 ## Direcao tecnica atual

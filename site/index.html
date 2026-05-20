@@ -15,14 +15,26 @@
       content="Full Stack .NET Developer com base forte em backend, aplicações web corporativas, SQL, Git/GitHub e automação com n8n."
     />
     <meta property="og:type" content="website" />
+    <!-- Public Pages URL follows the GitHub repository name. Update if the repo slug changes. -->
+    <meta property="og:image" content="https://diegolimaincode.github.io/Portfolio/assets/images/profile-photo.jpeg" />
+    <meta property="og:url" content="https://diegolimaincode.github.io/Portfolio/" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Diego Lima | Full Stack .NET Developer" />
     <meta
       name="twitter:description"
       content="C#, .NET, ASP.NET, ASP.NET MVC, Blazor, SQL, Git/GitHub e automação para aplicações web corporativas."
     />
+    <meta name="twitter:image" content="https://diegolimaincode.github.io/Portfolio/assets/images/profile-photo.jpeg" />
+    <link rel="canonical" href="https://diegolimaincode.github.io/Portfolio/" />
     <title>Diego Lima | Full Stack .NET Developer</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/tokens.css" />
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/layout.css" />
+    <link rel="stylesheet" href="./styles/components.css" />
+    <link rel="stylesheet" href="./styles/responsive.css" />
   </head>
   <body>
     <canvas class="background-canvas" data-bg-canvas aria-hidden="true"></canvas>
@@ -65,7 +77,7 @@
           <h1 class="reveal">Aplicações .NET com base forte em backend, dados e manutenção de longo prazo.</h1>
           <p class="hero-text reveal">
             Desenvolvedor Full Stack no ecossistema .NET, com foco em C#, ASP.NET, ASP.NET MVC, Blazor,
-            SQL, versionamento com Git/GitHub e automação de workflows com n8n.
+            SQL, versionamento com Git/GitHub e automação de workflows com n8n para rotinas internas e integrações.
           </p>
 
           <div class="hero-badges reveal" aria-label="Especialidades principais">
@@ -76,14 +88,20 @@
           </div>
 
           <div class="hero-actions reveal">
-            <a class="button primary" href="#contato">Entrar em contato</a>
-            <a class="button secondary" href="https://www.linkedin.com/in/diego-lima-118556288/" target="_blank" rel="noopener noreferrer">Ver LinkedIn</a>
+            <a class="button primary" href="#contato">
+              Entrar em contato
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a class="button secondary" href="https://www.linkedin.com/in/diego-lima-118556288/" target="_blank" rel="noopener noreferrer">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn
+            </a>
           </div>
         </div>
 
         <aside class="hero-panel reveal" aria-label="Resumo profissional">
           <figure class="profile-card" aria-label="Foto profissional de Diego Lima">
-            <img src="./assets/profile-photo.jpeg" width="180" height="180" alt="Foto de perfil de Diego Lima" />
+            <img src="./assets/images/profile-photo.jpeg" width="180" height="180" alt="Retrato profissional de Diego Lima, desenvolvedor Full Stack .NET" />
             <figcaption>
               <strong>Diego Lima</strong>
               <span>Full Stack .NET Developer</span>
@@ -131,15 +149,24 @@ clareza e evolução contínua</code></pre>
 
           <div class="credential-list reveal" aria-label="Credenciais profissionais">
             <div>
-              <strong>Base principal</strong>
+              <div class="credential-head">
+                <svg class="credential-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7v10l10 5 10-5V7L12 2z"/></svg>
+                <strong>Base principal</strong>
+              </div>
               <span>C#, .NET, ASP.NET, ASP.NET MVC e Blazor.</span>
             </div>
             <div>
-              <strong>Dados</strong>
+              <div class="credential-head">
+                <svg class="credential-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
+                <strong>Dados</strong>
+              </div>
               <span>SQL, modelagem relacional e consultas para aplicações web.</span>
             </div>
             <div>
-              <strong>Fluxo</strong>
+              <div class="credential-head">
+                <svg class="credential-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M6 9v6"/><path d="M9 15c2.3 0 4.7-2.3 4.7-6v-1c0-1.7 1.3-3 3-3h.3"/></svg>
+                <strong>Fluxo</strong>
+              </div>
               <span>Git, GitHub, revisão, padronização e evolução incremental.</span>
             </div>
           </div>
@@ -154,37 +181,55 @@ clareza e evolução contínua</code></pre>
 
         <div class="competency-grid">
           <article class="capability-card reveal">
-            <span class="card-index">01</span>
+            <div class="capability-header">
+              <span class="card-index">01</span>
+              <svg class="capability-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7v10l10 5 10-5V7L12 2z"/><path d="m8 10 3 2-3 2"/><path d="M14 10v4M12 12h4"/></svg>
+            </div>
             <h3>Ecossistema .NET</h3>
             <p>Desenvolvimento com C#, .NET, ASP.NET e ASP.NET MVC para aplicações web e regras de negócio.</p>
             <p class="stack-line">C# · .NET · ASP.NET · ASP.NET MVC</p>
           </article>
           <article class="capability-card reveal">
-            <span class="card-index">02</span>
+            <div class="capability-header">
+              <span class="card-index">02</span>
+              <svg class="capability-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="9" y1="9" x2="21" y2="9"/><line x1="9" y1="15" x2="21" y2="15"/></svg>
+            </div>
             <h3>Interfaces com Blazor</h3>
             <p>Construção de experiências web no ecossistema Microsoft, preservando integração com backend e dados.</p>
             <p class="stack-line">Blazor · Componentes · Web Apps</p>
           </article>
           <article class="capability-card reveal">
-            <span class="card-index">03</span>
+            <div class="capability-header">
+              <span class="card-index">03</span>
+              <svg class="capability-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
+            </div>
             <h3>Dados e Persistência</h3>
             <p>Organização de dados relacionais para sustentar aplicações com consultas claras e manutenção viável.</p>
             <p class="stack-line">SQL · Modelagem · Consultas</p>
           </article>
           <article class="capability-card reveal">
-            <span class="card-index">04</span>
+            <div class="capability-header">
+              <span class="card-index">04</span>
+              <svg class="capability-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="m8 10 3 2-3 2"/><line x1="13" y1="14" x2="16" y2="14"/></svg>
+            </div>
             <h3>APIs e Integrações</h3>
             <p>Criação e evolução de pontos de integração com atenção a contratos, estabilidade e suporte operacional.</p>
             <p class="stack-line">APIs · Integrações · Serviços</p>
           </article>
           <article class="capability-card reveal">
-            <span class="card-index">05</span>
+            <div class="capability-header">
+              <span class="card-index">05</span>
+              <svg class="capability-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><line x1="7" y1="7" x2="10" y2="10"/><line x1="17" y1="7" x2="14" y2="10"/><line x1="7" y1="17" x2="10" y2="14"/><line x1="17" y1="17" x2="14" y2="14"/></svg>
+            </div>
             <h3>Automação</h3>
             <p>Automação de workflows e rotinas recorrentes para reduzir esforço manual e melhorar previsibilidade.</p>
             <p class="stack-line">n8n · Workflows · Processos</p>
           </article>
           <article class="capability-card reveal">
-            <span class="card-index">06</span>
+            <div class="capability-header">
+              <span class="card-index">06</span>
+              <svg class="capability-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M6 9v6"/><path d="M9 15c2.3 0 4.7-2.3 4.7-6v-1c0-1.7 1.3-3 3-3h.3"/></svg>
+            </div>
             <h3>Qualidade e Colaboração</h3>
             <p>Versionamento e evolução incremental com foco em clareza, revisão e continuidade do código.</p>
             <p class="stack-line">Git · GitHub · Boas práticas</p>
@@ -198,7 +243,7 @@ clareza e evolução contínua</code></pre>
           <h2>Como as competências viram entregas com clareza, manutenção e evolução controlada.</h2>
         </div>
 
-        <div class="method-rail reveal">
+        <div class="method-rail reveal" aria-label="Processo de trabalho em três etapas">
           <article>
             <span>Diagnóstico</span>
             <p>Entendimento do contexto, regras de negócio e impacto técnico antes de escrever código.</p>
@@ -222,21 +267,30 @@ clareza e evolução contínua</code></pre>
 
         <div class="case-grid">
           <article class="case-card reveal">
-            <span class="status-tag">em documentação</span>
+            <div class="case-header">
+              <span class="status-tag">em documentação</span>
+              <svg class="case-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="9" y1="9" x2="21" y2="9"/><line x1="9" y1="15" x2="21" y2="15"/></svg>
+            </div>
             <h3>Aplicações Web .NET</h3>
-            <p>Espaço reservado para registrar aplicações ASP.NET, ASP.NET MVC ou Blazor com contexto, stack e responsabilidades.</p>
+            <p>Construção e manutenção de telas, controllers e regras de negócio em aplicações ASP.NET MVC e Blazor, com atenção a dados, validações e evolução incremental.</p>
             <p class="case-stack">C# · ASP.NET MVC · Blazor · SQL</p>
           </article>
           <article class="case-card reveal">
-            <span class="status-tag">em evolução</span>
+            <div class="case-header">
+              <span class="status-tag">em evolução</span>
+              <svg class="case-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><line x1="7" y1="7" x2="10" y2="10"/><line x1="17" y1="7" x2="14" y2="10"/><line x1="7" y1="17" x2="10" y2="14"/><line x1="17" y1="17" x2="14" y2="14"/></svg>
+            </div>
             <h3>Automações com n8n</h3>
-            <p>Área para documentar workflows, integrações e rotinas automatizadas sem adicionar métricas não comprovadas.</p>
+            <p>Desenho de workflows para conectar APIs, bancos de dados e tarefas recorrentes, reduzindo etapas manuais sem mascarar o funcionamento técnico do processo.</p>
             <p class="case-stack">n8n · Integrações · Workflows</p>
           </article>
           <article class="case-card reveal">
-            <span class="status-tag">disponível em breve</span>
+            <div class="case-header">
+              <span class="status-tag">disponível em breve</span>
+              <svg class="case-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="m8 10 3 2-3 2"/><line x1="13" y1="14" x2="16" y2="14"/></svg>
+            </div>
             <h3>APIs e Integrações</h3>
-            <p>Bloco preparado para apresentar contratos, endpoints, dados envolvidos e decisões técnicas relevantes.</p>
+            <p>Organização de contratos, endpoints e rotinas de integração com foco em previsibilidade, tratamento de erros e leitura clara para manutenção futura.</p>
             <p class="case-stack">APIs · SQL · GitHub</p>
           </article>
         </div>
@@ -248,21 +302,26 @@ clareza e evolução contínua</code></pre>
           <h2>Experiência prática em desenvolvimento e evolução de aplicações web.</h2>
         </div>
 
-        <article class="experience-card reveal" aria-label="Experiência na Saturnia Tecnologia">
-          <div class="experience-head">
-            <div>
-              <h3>Saturnia Tecnologia</h3>
-              <p class="role">Desenvolvedor Full Stack — Estágio</p>
+        <div class="experience-timeline reveal">
+          <article class="experience-card" aria-label="Experiência na Saturnia Tecnologia">
+            <span class="experience-marker" aria-hidden="true"></span>
+            <div class="experience-body">
+              <div class="experience-head">
+                <div>
+                  <h3>Saturnia Tecnologia</h3>
+                  <p class="role">Desenvolvedor Full Stack - Estágio</p>
+                </div>
+                <p class="periodo">Maio de 2026 até o momento · Remoto</p>
+              </div>
+              <p>
+                Atuação em ambiente remoto com desenvolvimento e manutenção de aplicações web no ecossistema .NET,
+                incluindo ASP.NET e ASP.NET MVC. Participação em melhorias, correções e evolução de sistemas internos,
+                com foco em estabilidade, clareza de implementação e suporte às demandas do negócio.
+              </p>
+              <p class="tech-line"><strong>Tecnologias:</strong> ASP.NET, ASP.NET MVC, C#, .NET, SQL, Git e GitHub.</p>
             </div>
-            <p class="periodo">Maio de 2026 até o momento · Remoto</p>
-          </div>
-          <p>
-            Atuação em ambiente remoto com desenvolvimento e manutenção de aplicações web no ecossistema .NET,
-            incluindo ASP.NET e ASP.NET MVC. Participação em melhorias, correções e evolução de sistemas internos,
-            com foco em estabilidade, clareza de implementação e suporte às demandas do negócio.
-          </p>
-          <p class="tech-line"><strong>Tecnologias:</strong> ASP.NET, ASP.NET MVC, C#, .NET, SQL, Git e GitHub.</p>
-        </article>
+          </article>
+        </div>
       </section>
 
       <section class="section education" id="formacao">
@@ -285,9 +344,18 @@ clareza e evolução contínua</code></pre>
         </div>
 
         <div class="contact-actions reveal">
-          <a class="button primary" href="mailto:diegolimabarenco@gmail.com">Enviar e-mail</a>
-          <a class="button secondary" href="https://www.linkedin.com/in/diego-lima-118556288/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a class="button secondary" href="https://github.com/DiegoLimaInCode" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="button primary" href="mailto:diegolimabarenco@gmail.com">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Enviar e-mail
+          </a>
+          <a class="button secondary" href="https://www.linkedin.com/in/diego-lima-118556288/" target="_blank" rel="noopener noreferrer">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+          <a class="button secondary" href="https://github.com/DiegoLimaInCode" target="_blank" rel="noopener noreferrer">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            GitHub
+          </a>
         </div>
       </section>
     </main>
@@ -302,6 +370,9 @@ clareza e evolução contínua</code></pre>
       </div>
     </footer>
 
-    <script src="./script.js"></script>
+    <script src="./scripts/menu.js" defer></script>
+    <script src="./scripts/background-canvas.js" defer></script>
+    <script src="./scripts/terminal.js" defer></script>
+    <script src="./scripts/main.js" defer></script>
   </body>
 </html>
