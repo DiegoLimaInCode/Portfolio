@@ -1,46 +1,50 @@
 /* tokens.css - Variáveis globais, reset e animações base */
 
 :root {
-  --bg: #030712; /* Preto ardósia profundo corporativo (Tailwind Gray-950) */
-  --bg-alt: #0b0f19; /* Fundo alternativo azulado escuro */
-  --surface: rgba(17, 24, 39, 0.85); /* Superfície escura translúcida */
-  --surface-soft: rgba(31, 41, 55, 0.7);
-  --surface-strong: #090d16;
-  --line: rgba(148, 163, 184, 0.15); /* Linhas de borda muito sutis e elegantes */
-  --line-strong: rgba(148, 163, 184, 0.28);
-  --text: #f8fafc; /* Texto primário brilhante e legível */
-  --text-soft: #e2e8f0;
-  --muted: #94a3b8; /* Slate-400 secundário sóbrio */
-  --muted-strong: #cbd5e1; /* Slate-300 */
-  --accent: #06b6d4; /* Ciano corporativo */
+  --bg: #020617;
+  --bg-alt: #07111f;
+  --bg-elevated: #0b1220;
+  --surface: rgba(15, 23, 42, 0.78);
+  --surface-soft: rgba(30, 41, 59, 0.56);
+  --surface-strong: #07101d;
+  --surface-glass: rgba(8, 15, 28, 0.72);
+  --line: rgba(148, 163, 184, 0.16);
+  --line-strong: rgba(203, 213, 225, 0.3);
+  --line-accent: rgba(34, 211, 238, 0.28);
+  --text: #f8fafc;
+  --text-soft: #e5edf8;
+  --muted: #a8b3c4;
+  --muted-strong: #cbd5e1;
+  --accent: #0891b2;
   --accent-strong: #22d3ee;
-  --accent-deep: #083344;
-  --accent-soft: rgba(6, 182, 212, 0.12);
-  --accent-faint: rgba(6, 182, 212, 0.05);
+  --accent-deep: #0e3744;
+  --accent-soft: rgba(34, 211, 238, 0.14);
+  --accent-faint: rgba(34, 211, 238, 0.06);
+  --accent-wash: rgba(8, 145, 178, 0.09);
   --warning: #f59e0b;
-  --success: #10b981;
-  --focus: #38bdf8; /* Azul claro para acessibilidade/foco */
-  --radius-xs: 6px;
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 18px;
+  --success: #22c55e;
+  --focus: #7dd3fc;
+  --radius-xs: 7px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
   --max-width: 1180px;
   --mono: 'JetBrains Mono', 'Cascadia Mono', 'Fira Code', monospace;
   --sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  
+
   /* Shadow & Glow Tokens */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.5);
-  --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.02);
-  --glow-accent: 0 0 15px rgba(34, 211, 238, 0.12);
-  --glow-accent-strong: 0 0 25px rgba(34, 211, 238, 0.25);
-  --shadow-focus: 0 0 0 4px rgba(56, 189, 248, 0.18);
-  
+  --shadow-sm: 0 8px 22px rgba(0, 0, 0, 0.24);
+  --shadow-md: 0 16px 36px rgba(0, 0, 0, 0.32);
+  --shadow-lg: 0 28px 70px rgba(0, 0, 0, 0.44);
+  --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.035);
+  --glow-accent: 0 0 24px rgba(34, 211, 238, 0.12);
+  --glow-accent-strong: 0 0 34px rgba(34, 211, 238, 0.2);
+  --shadow-focus: 0 0 0 4px rgba(125, 211, 252, 0.2);
+
   /* Transition Tokens */
-  --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-normal: 250ms cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-slow: 350ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 140ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 240ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 420ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * {

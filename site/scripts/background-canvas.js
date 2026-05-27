@@ -9,6 +9,7 @@ function setupBackgroundCanvas() {
   const reducedMotionMedia = window.matchMedia("(prefers-reduced-motion: reduce)");
   const mobileMedia = window.matchMedia("(max-width: 960px)");
   const shouldReduceMotion = () => reducedMotionMedia.matches || mobileMedia.matches;
+  const shouldPause = () => document.hidden || shouldReduceMotion();
 
   const codeLines = [
     "dotnet build --configuration Release",
@@ -196,7 +197,7 @@ function setupBackgroundCanvas() {
   };
 
   const start = () => {
-    if (shouldReduceMotion()) {
+    if (shouldPause()) {
       stop();
       return;
     }
@@ -215,6 +216,7 @@ function setupBackgroundCanvas() {
 
   start();
   window.addEventListener("resize", handleResize);
+  document.addEventListener("visibilitychange", start);
   reducedMotionMedia.addEventListener("change", start);
   mobileMedia.addEventListener("change", start);
 }
