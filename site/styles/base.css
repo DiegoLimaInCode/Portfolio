@@ -3,6 +3,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  color-scheme: dark;
 }
 
 body {
@@ -10,9 +11,10 @@ body {
   min-height: 100vh;
   color: var(--text);
   background:
-    radial-gradient(62rem 26rem at 78% -10%, rgba(6, 182, 212, 0.08), transparent 68%),
-    radial-gradient(42rem 22rem at 8% 8%, rgba(148, 163, 184, 0.08), transparent 64%),
-    linear-gradient(145deg, var(--bg) 0%, var(--bg-alt) 52%, #02050b 100%);
+    radial-gradient(58rem 28rem at 78% -12%, rgba(34, 211, 238, 0.12), transparent 68%),
+    radial-gradient(48rem 24rem at 8% 6%, rgba(14, 165, 233, 0.08), transparent 66%),
+    radial-gradient(36rem 24rem at 50% 110%, rgba(34, 197, 94, 0.045), transparent 70%),
+    linear-gradient(145deg, var(--bg) 0%, var(--bg-alt) 50%, #02040a 100%);
   font-family: var(--sans);
   font-size: 1rem;
   line-height: 1.65;
@@ -21,6 +23,7 @@ body {
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Grid de fundo sutil de engenharia tech */
@@ -30,12 +33,12 @@ body::before {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.08;
+  opacity: 0.1;
   background-image:
-    linear-gradient(rgba(238, 245, 247, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(238, 245, 247, 0.04) 1px, transparent 1px);
-  background-size: 56px 56px;
-  mask-image: radial-gradient(circle at 50% 28%, black 12%, transparent 78%);
+    linear-gradient(rgba(226, 232, 240, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(226, 232, 240, 0.055) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(circle at 50% 22%, black 10%, transparent 76%);
 }
 
 .background-canvas {
@@ -45,7 +48,7 @@ body::before {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  opacity: 0.65; /* Suavizado para não distrair a leitura */
+  opacity: 0.46; /* Suavizado para não distrair a leitura */
 }
 
 .background-vignette {
@@ -54,8 +57,8 @@ body::before {
   z-index: 1;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(3, 7, 18, 0.85) 0%, rgba(3, 7, 18, 0.15) 50%, rgba(3, 7, 18, 0.8) 100%),
-    radial-gradient(circle at 50% 28%, transparent 15%, rgba(3, 7, 18, 0.65) 85%);
+    linear-gradient(90deg, rgba(2, 6, 23, 0.9) 0%, rgba(2, 6, 23, 0.18) 48%, rgba(2, 6, 23, 0.84) 100%),
+    radial-gradient(circle at 50% 24%, transparent 16%, rgba(2, 6, 23, 0.72) 86%);
 }
 
 img {
@@ -66,7 +69,11 @@ img {
 a {
   color: inherit;
   text-decoration: none;
-  transition: color 150ms ease, opacity 150ms ease;
+  transition: color var(--transition-fast), opacity var(--transition-fast), text-decoration-color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--text-soft);
 }
 
 h1, h2, h3, p {
@@ -75,8 +82,9 @@ h1, h2, h3, p {
 
 h1, h2, h3 {
   font-family: var(--sans);
-  letter-spacing: 0;
+  letter-spacing: -0.025em;
   font-weight: 800;
+  color: var(--text);
 }
 
 h1,
@@ -102,4 +110,27 @@ button:focus-visible,
   outline: 2px solid var(--focus);
   outline-offset: 3px;
   box-shadow: var(--shadow-focus);
+}
+
+::selection {
+  color: #020617;
+  background: rgba(125, 211, 252, 0.88);
+}
+
+::-webkit-scrollbar {
+  width: 0.75rem;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  border: 3px solid var(--bg);
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.42);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 211, 238, 0.55);
 }

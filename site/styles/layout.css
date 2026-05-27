@@ -117,18 +117,41 @@ h3 {
   margin-bottom: 2.2rem;
 }
 
+.section-description {
+  max-width: 46rem;
+  margin: 0.9rem 0 0;
+  color: var(--muted);
+  font-size: clamp(0.98rem, 1.2vw, 1.08rem);
+  line-height: 1.7;
+}
+
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(350px, 0.8fr);
-  gap: clamp(1.8rem, 4vw, 3.4rem);
+  grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.72fr);
+  gap: clamp(1.8rem, 4vw, 3.5rem);
   align-items: center;
-  min-height: calc(86vh - 72px);
-  min-height: calc(86svh - 72px);
+  min-height: calc(82vh - 72px);
+  min-height: calc(82svh - 72px);
+  overflow: hidden;
 }
 
 .hero.section {
-  padding-top: clamp(2.3rem, 4.5vw, 4rem);
-  padding-bottom: clamp(1rem, 2vw, 1.5rem);
+  padding-top: clamp(2.2rem, 4vw, 3.8rem);
+  padding-bottom: clamp(1.7rem, 3vw, 2.4rem);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: clamp(0.9rem, 2.5vw, 1.8rem) clamp(0.2rem, 1vw, 0.8rem);
+  z-index: -1;
+  border: 1px solid rgba(148, 163, 184, 0.045);
+  border-radius: calc(var(--radius-lg) + 8px);
+  background:
+    radial-gradient(30rem 16rem at 18% 18%, rgba(34, 211, 238, 0.07), transparent 72%),
+    radial-gradient(24rem 14rem at 88% 54%, rgba(34, 197, 94, 0.035), transparent 74%),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.1), rgba(2, 6, 23, 0.02));
+  pointer-events: none;
 }
 
 .profile.section {
@@ -137,23 +160,32 @@ h3 {
 
 .hero-copy {
   position: relative;
+  max-width: 46rem;
 }
 
 .hero-copy::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -1.25rem;
-  width: min(100%, 600px);
+  bottom: -1.35rem;
+  width: min(100%, 680px);
   height: 1px;
-  background: linear-gradient(90deg, var(--accent), transparent);
-  opacity: 0.35;
+  background: linear-gradient(90deg, var(--accent-strong), rgba(34, 211, 238, 0.12), transparent);
+  opacity: 0.55;
+}
+
+.hero h1 {
+  max-width: 20.5ch;
+  margin-bottom: 1rem;
+  font-size: clamp(2.05rem, 4.1vw, 3.72rem);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
 }
 
 .hero-text {
-  max-width: 48rem;
-  font-size: clamp(1rem, 1.4vw, 1.14rem);
-  line-height: 1.7;
+  max-width: 40rem;
+  font-size: clamp(1rem, 1.25vw, 1.12rem);
+  line-height: 1.68;
 }
 
 .profile-grid {
@@ -169,20 +201,31 @@ h3 {
   gap: 1rem;
 }
 
+.competency-grid {
+  gap: 1.05rem;
+}
+
+.case-grid {
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
+  align-items: stretch;
+}
+
 .site-footer {
   width: min(100%, var(--max-width));
   margin: 0 auto;
-  padding: 1.5rem clamp(1rem, 4vw, 2rem) 2.5rem;
+  padding: 1.35rem clamp(1rem, 4vw, 2rem) 2.4rem;
   border-top: 1px solid var(--line);
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   gap: 1.5rem;
   color: var(--muted);
   font-size: 0.88rem;
 }
 
 .site-footer strong,
-.site-footer span {
+.site-footer span,
+.site-footer small {
   display: block;
 }
 
@@ -195,4 +238,10 @@ h3 {
   text-align: right;
   font-family: var(--mono);
   font-size: 0.75rem;
+}
+
+.site-footer small {
+  margin-top: 0.25rem;
+  color: var(--muted);
+  font-size: 0.68rem;
 }

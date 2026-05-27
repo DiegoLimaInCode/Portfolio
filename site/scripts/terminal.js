@@ -18,13 +18,13 @@ function setupTerminalTyping() {
 
   const lines = [
     { text: "$ dotnet profile", command: true },
-    { text: "C# | .NET | ASP.NET MVC" },
-    { text: "Blazor | SQL | GitHub" },
-    { text: "n8n | APIs | manutenção" },
+    { text: "C# | ASP.NET MVC | Blazor" },
+    { text: "SQL | APIs | Git/GitHub" },
+    { text: "n8n | automações | manutenção" },
     { text: "" },
-    { text: "$ focus", command: true },
-    { text: "web corporativo com" },
-    { text: "clareza e evolução contínua" }
+    { text: "$ value", command: true },
+    { text: "backend claro, dados organizados" },
+    { text: "e código pronto para evoluir" }
   ];
 
   let lineIndex = 0;
