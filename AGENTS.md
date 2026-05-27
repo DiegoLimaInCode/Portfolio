@@ -1,51 +1,72 @@
 # Repository Guidelines
 
-## Project Structure & Module Organization
+## Project Shape
 
-This repository is a static personal portfolio. The public site lives in `site/`:
+- This is Diego Lima's static personal portfolio. The published site lives in `site/`.
+- GitHub Pages deploys the exact contents of `site/` via `.github/workflows/deploy-pages.yml` on pushes to `main`.
+- There is no framework, package manager, bundler, or build step. Do not add one unless explicitly requested.
+- Keep the project simple, lightweight, static, and compatible with GitHub Pages.
 
-- `site/index.html`: page content, sections, metadata, and links.
-- `site/styles/`: CSS split by responsibility (`tokens.css`, `base.css`, `layout.css`, `components.css`, `responsive.css`).
-- `site/scripts/`: browser-native JavaScript split by behavior (`menu.js`, `background-canvas.js`, `terminal.js`, `main.js`).
-- `site/assets/`: profile image and project illustrations.
-- `.github/workflows/deploy-pages.yml`: GitHub Pages deployment from `site/`.
-- `docs/stories/`: project notes and implementation stories.
+## Official Doctrine
 
-Assistant and local framework folders such as `.codex/`, `.aiox-core/`, and `.github/agents/` are not part of the published site.
+- Redesign work must follow `docs/portfolio-design-doctrine.md` and `docs/modularity-doctrine.md`.
+- Visual direction: dark premium, technological, clean, professional, readable, and trustworthy.
+- Professional focus: C#, .NET, ASP.NET MVC, Blazor, SQL, Git/GitHub, APIs, and n8n automations.
+- Core modularity rule: "Nada e isolado, mas nada deve depender de tudo."
 
-## Build, Test, and Development Commands
+## Hard Constraints
 
-There is no package manager or build step in this repo. Do not use `npm install` or `npm run` unless a future change adds a `package.json`.
+- Do not add a framework.
+- Do not add a build step.
+- Do not add unnecessary dependencies.
+- Do not turn the project into a monolith.
+- Preserve GitHub Pages compatibility and keep public assets inside `site/`.
+- Preserve relative paths such as `./styles`, `./scripts`, and `./assets`.
+- Split large changes by section; each section should be alterable, testable, or removable without breaking the rest of the site.
 
-```powershell
-cd "C:\Users\diego\Documents\Projetos\meuportfolio real\site"
-python -m http.server 8000
-```
+## CSS Responsibilities
 
-Serves the site locally at `http://localhost:8000`.
+- `site/styles/tokens.css`: variables, design tokens, colors, type, radius, shadows, transitions, and base animations.
+- `site/styles/base.css`: reset/base global, HTML/body, typography base, backgrounds, focus states, and global accessibility.
+- `site/styles/layout.css`: page structure, header, grids, sections, hero layout, and footer layout.
+- `site/styles/components.css`: reusable components such as buttons, cards, badges, terminal, timelines, and visual blocks.
+- `site/styles/responsive.css`: breakpoints, mobile menu styles, viewport adjustments, and reduced-motion/mobile overrides.
 
-```powershell
-Get-ChildItem site/scripts -Filter *.js | ForEach-Object { node --check $_.FullName }
-```
+## JavaScript Responsibilities
 
-Checks JavaScript syntax for the split browser scripts without running the browser UI.
+- Keep browser scripts simple, global, and separated by responsibility.
+- Current load order is `menu.js`, `background-canvas.js`, `terminal.js`, then `main.js`.
+- `main.js` initializes `setupMenu()`, `setupBackgroundCanvas()`, and `setupTerminalTyping()` on `DOMContentLoaded`.
+- Alter scripts only when the new structure requires it.
 
-You can also open `site/index.html` directly in a browser for a quick static review.
+## Public JS Hooks
 
-## Coding Style & Naming Conventions
+- Preserve or update together the public hooks used by JavaScript: `data-menu-button`, `data-nav`, `data-bg-canvas`, and `data-terminal-output`.
+- These hooks are contracts between HTML and JS. If markup changes a hook, update the corresponding script in the same change.
+- Canvas and terminal behavior must still fall back for `prefers-reduced-motion: reduce` and mobile widths (`max-width: 960px`).
 
-Use two-space indentation in HTML, CSS, and JavaScript. Keep CSS class names descriptive and kebab-case, for example `.hero-terminal` or `.project-card`. Prefer semantic HTML sections with clear IDs for navigation anchors. Keep JavaScript small, browser-native, and organized around named setup functions such as `setupBackgroundCanvas()`.
+## Local Run And Verification
 
-## Testing Guidelines
+- Serve locally from the published root: `python -m http.server 8000` with workdir `site/`, then open `http://localhost:8000`.
+- When JavaScript changes, check syntax from the repo root with PowerShell: `Get-ChildItem site/scripts -Filter *.js | ForEach-Object { node --check $_.FullName }`.
+- For UI changes, manually review desktop and mobile widths; there is no automated browser test suite.
 
-No automated test framework is currently configured. For every UI change, run the `node --check` loop over `site/scripts/*.js` and manually review the page on desktop and mobile widths. Check navigation anchors, mobile menu behavior, reduced-motion behavior, and that images in `site/assets/` load correctly.
+## Implementation Order
 
-## Commit & Pull Request Guidelines
+1. Criar doutrina em `docs/`.
+2. Atualizar `AGENTS.md` com a doutrina.
+3. Ajustar `tokens.css` e `base.css`.
+4. Redesenhar hero.
+5. Redesenhar competencias.
+6. Redesenhar projetos/cases.
+7. Redesenhar experiencia/formacao/processo.
+8. Redesenhar contato/footer.
+9. Revisar responsividade.
+10. Revisar acessibilidade/performance.
 
-Recent commits use short imperative messages, for example `Improve responsive portfolio experience` and `Remove duplicate hero profile photo`. Follow that style: describe the user-facing change in one concise sentence.
+## Conventions
 
-Pull requests should include a short description, validation steps performed, and screenshots or recordings for visual changes. Link related issues or story files when relevant.
-
-## Security & Configuration Tips
-
-Never commit real secrets. `.env`, local tool folders, `test-results/`, and `docs/references/` are intentionally ignored. Keep public-facing updates limited to `site/`, `.github/workflows/`, docs, and repository metadata unless there is a clear reason to expand scope.
+- Use two-space indentation in HTML, CSS, and JavaScript.
+- Keep CSS class names descriptive and kebab-case.
+- Metadata in `site/index.html` currently points to `https://diegolimaincode.github.io/Portfolio/`; update canonical, Open Graph, and Twitter URLs together if the repo slug or domain changes.
+- Recent commits use short imperative messages such as `Refine portfolio UX and accessibility`.
