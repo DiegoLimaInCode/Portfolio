@@ -1,29 +1,40 @@
-# Portfolio
+# Site publicado (`site/`)
 
-Primeira versao estatica do portfolio pessoal, com posicionamento em desenvolvimento Full Stack, C#, ASP.NET Core, MVC, Blazor, automacao e solucoes web.
+Esta pasta é a **raiz publicada** no GitHub Pages. Tudo aqui vai direto para [https://diegolimaincode.github.io/Portfolio/](https://diegolimaincode.github.io/Portfolio/).
 
-## Estrutura
+Documentação completa do repositório: [README na raiz](../README.md).
 
-- `index.html`: conteudo e secoes da pagina.
-- `styles/`: pasta contendo as folhas de estilo divididas por responsabilidade (`tokens.css`, `base.css`, `layout.css`, `components.css`, `responsive.css`).
-- `scripts/`: pasta contendo os scripts JavaScript modulares (`menu.js`, `background-canvas.js`, `terminal.js`, `main.js`).
-- `assets/`: pasta contendo as fotos e ilustracoes organizadas em subpastas (`images/` e `projects/`).
+## Arquivos principais
 
-## Como abrir
+| Pasta / arquivo | Função |
+|-----------------|--------|
+| `index.html` | Conteúdo e seções da página |
+| `styles/tokens.css` | Variáveis, cores, tipografia, animações |
+| `styles/base.css` | Reset, body, tipografia global, acessibilidade |
+| `styles/layout.css` | Header, hero, grids, footer |
+| `styles/components.css` | Botões, cards, terminal, efeitos visuais |
+| `styles/sections.css` | Hero, perfil, contato, disponibilidade |
+| `styles/section-flow.css` | Competências, cases, experiência, formação |
+| `styles/responsive.css` | Breakpoints mobile/desktop |
+| `scripts/*.js` | Menu, canvas, terminal, animações e scroll |
+| `assets/images/` | Foto de perfil |
+| `assets/projects/` | Capas dos cases (JPG) |
 
-Abra `site/index.html` diretamente no navegador.
+## Scripts (ordem de carregamento)
 
-## Pontos para personalizar
+1. `menu.js`
+2. `background-canvas.js`
+3. `terminal.js`
+4. `blur-text.js`
+5. `card-3d.js`
+6. `scroll-reveal.js`
+7. `scroll-progress.js`
+8. `main.js`
 
-- Trocar o nome, descricao e links de contato.
-- Substituir os projetos de exemplo por projetos reais.
-- Atualizar `assets/images/avatar.svg` por uma foto ou ilustracao pessoal.
-- Informar o dominio publico final para configurar `canonical`, `og:url`, `og:image` e `twitter:image`.
-- Quando quiser evoluir para React/Vite, criar uma alteracao separada para preservar a versao estatica atual.
+## Servir localmente
 
-## Direcao tecnica atual
+```powershell
+python -m http.server 8000
+```
 
-- C# e ASP.NET Core para back-end e sistemas web.
-- MVC, Razor Pages e Blazor para interfaces e aplicacoes .NET.
-- APIs REST, integracoes e automacoes para fluxos operacionais.
-- HTML, CSS e JavaScript continuam compondo a versao estatica do portfolio.
+Abra `http://localhost:8000` com o terminal dentro de `site/`.
