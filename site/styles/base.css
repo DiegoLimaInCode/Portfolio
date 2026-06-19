@@ -1,4 +1,4 @@
-/* base.css - Estilos globais, reset HTML/Body, tipografia e backgrounds */
+/* base.css - Fundo, tipografia e acessibilidade global */
 
 html {
   scroll-behavior: smooth;
@@ -9,12 +9,13 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
+  min-height: 100dvh;
   color: var(--text);
   background:
-    radial-gradient(58rem 28rem at 78% -12%, rgba(34, 211, 238, 0.12), transparent 68%),
-    radial-gradient(48rem 24rem at 8% 6%, rgba(14, 165, 233, 0.08), transparent 66%),
-    radial-gradient(36rem 24rem at 50% 110%, rgba(34, 197, 94, 0.045), transparent 70%),
-    linear-gradient(145deg, var(--bg) 0%, var(--bg-alt) 50%, #02040a 100%);
+    radial-gradient(52rem 30rem at 82% -8%, rgba(79, 140, 255, 0.14), transparent 68%),
+    radial-gradient(44rem 26rem at 6% 4%, rgba(139, 92, 246, 0.09), transparent 66%),
+    radial-gradient(34rem 22rem at 50% 108%, rgba(34, 197, 94, 0.04), transparent 72%),
+    linear-gradient(160deg, var(--bg) 0%, var(--bg-alt) 52%, #020306 100%);
   font-family: var(--sans);
   font-size: 1rem;
   line-height: 1.65;
@@ -26,19 +27,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Grid de fundo sutil de engenharia tech */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.1;
+  opacity: 0.07;
   background-image:
-    linear-gradient(rgba(226, 232, 240, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(226, 232, 240, 0.055) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: radial-gradient(circle at 50% 22%, black 10%, transparent 76%);
+    radial-gradient(circle at center, rgba(148, 163, 184, 0.35) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(circle at 50% 18%, black 8%, transparent 78%);
 }
 
 .background-canvas {
@@ -48,7 +47,7 @@ body::before {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  opacity: 0.46; /* Suavizado para não distrair a leitura */
+  opacity: 0.28;
 }
 
 .background-vignette {
@@ -57,8 +56,8 @@ body::before {
   z-index: 1;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(2, 6, 23, 0.9) 0%, rgba(2, 6, 23, 0.18) 48%, rgba(2, 6, 23, 0.84) 100%),
-    radial-gradient(circle at 50% 24%, transparent 16%, rgba(2, 6, 23, 0.72) 86%);
+    linear-gradient(180deg, rgba(3, 5, 8, 0.55) 0%, transparent 22%, transparent 78%, rgba(3, 5, 8, 0.82) 100%),
+    radial-gradient(circle at 50% 20%, transparent 12%, rgba(3, 5, 8, 0.68) 88%);
 }
 
 img {
@@ -69,7 +68,7 @@ img {
 a {
   color: inherit;
   text-decoration: none;
-  transition: color var(--transition-fast), opacity var(--transition-fast), text-decoration-color var(--transition-fast);
+  transition: color var(--transition-fast), opacity var(--transition-fast), border-color var(--transition-fast);
 }
 
 a:hover {
@@ -81,18 +80,16 @@ h1, h2, h3, p {
 }
 
 h1, h2, h3 {
-  font-family: var(--sans);
-  letter-spacing: -0.025em;
-  font-weight: 800;
+  font-family: var(--display);
+  letter-spacing: -0.03em;
+  font-weight: 700;
   color: var(--text);
 }
 
-h1,
-h2 {
+h1, h2 {
   text-wrap: balance;
 }
 
-/* Cores de textos descritivos secundários */
 .hero-text,
 .profile-summary p,
 .capability-card p,
@@ -113,12 +110,12 @@ button:focus-visible,
 }
 
 ::selection {
-  color: #020617;
-  background: rgba(125, 211, 252, 0.88);
+  color: #030508;
+  background: rgba(147, 197, 253, 0.88);
 }
 
 ::-webkit-scrollbar {
-  width: 0.75rem;
+  width: 0.7rem;
 }
 
 ::-webkit-scrollbar-track {
@@ -127,10 +124,10 @@ button:focus-visible,
 
 ::-webkit-scrollbar-thumb {
   border: 3px solid var(--bg);
-  border-radius: 999px;
-  background: rgba(148, 163, 184, 0.42);
+  border-radius: var(--radius-pill);
+  background: rgba(148, 163, 184, 0.38);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(34, 211, 238, 0.55);
+  background: rgba(79, 140, 255, 0.55);
 }
