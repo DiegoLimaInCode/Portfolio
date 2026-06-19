@@ -25,6 +25,8 @@ Thumbs.db
 *.swp
 
 # Local assistant/framework files
+mcps/
+terminals/
 .aiox-core/
 .aiox/
 .claude/
