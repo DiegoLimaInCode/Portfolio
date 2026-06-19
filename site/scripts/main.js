@@ -10,4 +10,16 @@ document.addEventListener("DOMContentLoaded", () => {
   if (typeof setupTerminalTyping === "function") {
     setupTerminalTyping();
   }
+  if (typeof setupBlurText === "function") {
+    setupBlurText();
+  }
+  if (typeof setupCard3d === "function") {
+    setupCard3d();
+  }
+  if (typeof setupScrollReveal === "function") {
+    setupScrollReveal();
+  }
+  if (typeof setupScrollProgress === "function") {
+    setupScrollProgress();
+  }
 });
