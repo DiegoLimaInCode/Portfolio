@@ -37,3 +37,7 @@ terminals/
 .kimi/
 .github/agents/
 docs/references/
+
+# Local browser QA artifacts
+.playwright-cli/
+output/
