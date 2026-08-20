@@ -1,4 +1,4 @@
-export type SkillIcon = "dotnet" | "api" | "database" | "automation" | "git" | "maintenance";
+export type SkillIcon = "dotnet" | "react" | "database" | "architecture" | "git" | "maintenance";
 
 export interface SkillGroup {
   id: string;
@@ -8,14 +8,67 @@ export interface SkillGroup {
   description: string;
   technologies: readonly string[];
   icon: SkillIcon;
-  hasTilt: boolean;
 }
 
 export const skillGroups: readonly SkillGroup[] = [
-  { id: "web-dotnet", index: "01", kicker: "Aplicações corporativas", title: "Sistemas Web .NET", description: "Construção de aplicações web com C#, ASP.NET MVC, Blazor e estrutura organizada para sustentar regras de negócio e interfaces claras.", technologies: ["C#", ".NET", "ASP.NET MVC", "Blazor"], icon: "dotnet", hasTilt: true },
-  { id: "backend-apis", index: "02", kicker: "Contratos e integrações", title: "Backend e APIs", description: "Organização de regras de negócio, endpoints e integrações para conectar sistemas com contratos claros e manutenção previsível.", technologies: ["APIs", "ASP.NET", "Integrações", "Serviços"], icon: "api", hasTilt: true },
-  { id: "sql", index: "03", kicker: "Base para decisões", title: "Banco de Dados SQL", description: "Modelagem, consultas e organização de dados relacionais para sustentar aplicações com informação consistente e fácil de evoluir.", technologies: ["SQL", "Modelagem", "Consultas", "Persistência"], icon: "database", hasTilt: false },
-  { id: "n8n", index: "04", kicker: "Fluxos operacionais", title: "Automações com n8n", description: "Criação de fluxos automatizados para reduzir tarefas manuais, conectar webhooks, APIs e rotinas recorrentes com previsibilidade.", technologies: ["n8n", "Webhooks", "Workflows", "APIs"], icon: "automation", hasTilt: true },
-  { id: "git", index: "05", kicker: "Evolução rastreável", title: "Git/GitHub e organização", description: "Versionamento, histórico de evolução e organização do código para facilitar colaboração, revisão e continuidade técnica.", technologies: ["Git", "GitHub", "Branches", "Revisão"], icon: "git", hasTilt: false },
-  { id: "maintenance", index: "06", kicker: "Software sustentável", title: "Manutenção e evolução", description: "Melhorias incrementais, documentação e código claro para que sistemas continuem compreensíveis depois da primeira entrega.", technologies: ["Manutenção", "Documentação", "Clareza", "Evolução"], icon: "maintenance", hasTilt: true },
+  {
+    id: "backend-dotnet",
+    index: "01",
+    kicker: "Onde eu sou mais forte",
+    title: "Backend em C# e .NET",
+    description:
+      "Construção de APIs e regras de negócio em C#, com endpoints de contrato claro e código organizado para sustentar o que a aplicação promete.",
+    technologies: ["C#", ".NET", "ASP.NET MVC", "APIs REST"],
+    icon: "dotnet",
+  },
+  {
+    id: "frontend-react",
+    index: "02",
+    kicker: "A outra ponta",
+    title: "Frontend em React e TypeScript",
+    description:
+      "Telas construídas em React com TypeScript, consumindo as próprias APIs que escrevo. Foi assim que entreguei os módulos do CRM na Saturnia.",
+    technologies: ["React", "TypeScript", "Vite", "HTML e CSS"],
+    icon: "react",
+  },
+  {
+    id: "dados",
+    index: "03",
+    kicker: "Base de tudo",
+    title: "Modelagem e banco de dados",
+    description:
+      "Modelagem relacional, consultas e persistência com PostgreSQL e SQL. No .NET uso Entity Framework Core com migrations para evoluir schema sem perder histórico.",
+    technologies: ["PostgreSQL", "SQL", "Entity Framework Core", "Modelagem"],
+    icon: "database",
+  },
+  {
+    id: "arquitetura",
+    index: "04",
+    kicker: "Como eu organizo",
+    title: "Arquitetura em camadas",
+    description:
+      "Separação entre domínio, dados, aplicação e interface, para que a regra de negócio não dependa da tela nem do banco. Repository Pattern, injeção de dependência e MVVM.",
+    technologies: ["Camadas", "Repository", "Injeção de dependência", "MVVM"],
+    icon: "architecture",
+  },
+  {
+    id: "git",
+    index: "05",
+    kicker: "Trabalho em equipe",
+    title: "Git e GitHub",
+    description:
+      "Versionamento com histórico legível, uso de branches para separar frentes de trabalho e commits que explicam a intenção da mudança.",
+    technologies: ["Git", "GitHub", "Branches", "Pull requests"],
+    icon: "git",
+  },
+  {
+    id: "manutencao",
+    index: "06",
+    kicker: "Depois da entrega",
+    title: "Manutenção e evolução",
+    description:
+      "Melhoria incremental de sistema que já está rodando, com documentação e código claro para que a próxima pessoa entenda sem precisar perguntar.",
+    technologies: ["Refatoração", "Documentação", "Correções", "Evolução"],
+    icon: "maintenance",
+  },
 ];

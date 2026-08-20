@@ -8,6 +8,6 @@ export const navigationItems: readonly NavigationItem[] = [
   { label: "Skills", href: "#competencias" },
   { label: "Cases", href: "#cases" },
   { label: "Experiência", href: "#experiencia" },
-  { label: "Disponível", href: "#disponibilidade" },
+  { label: "Formação", href: "#formacao" },
   { label: "Contato", href: "#contato" },
 ];

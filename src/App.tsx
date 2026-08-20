@@ -10,7 +10,6 @@ import { Hero } from "./components/sections/Hero";
 import { ProfileSection } from "./components/sections/ProfileSection";
 import { StackMarquee } from "./components/sections/StackMarquee";
 import { WorkMethodSection } from "./components/sections/WorkMethodSection";
-import { BackgroundScene } from "./components/ui/BackgroundScene";
 import { useInteractionEffects } from "./hooks/useInteractionEffects";
 import { useScrollEffects } from "./hooks/useScrollEffects";
 
@@ -20,7 +19,7 @@ export default function App() {
 
   return (
     <>
-      <BackgroundScene />
+      <div className="background-grid" aria-hidden="true" />
       <div className="background-vignette" aria-hidden="true" />
       <div className="scroll-progress" data-scroll-progress aria-hidden="true"><span /></div>
       <a className="skip-link" href="#conteudo">Ir para o conteúdo principal</a>

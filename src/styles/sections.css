@@ -27,46 +27,6 @@
   box-shadow: var(--shadow-inset);
 }
 
-.hero-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.55rem;
-  margin-top: 0.95rem;
-}
-
-.hero-badges span {
-  min-height: 2.15rem;
-  padding: 0.48rem 0.75rem;
-  border-radius: var(--radius-pill);
-  border: 1px solid rgba(79, 140, 255, 0.2);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  color: #c7dcff;
-  background: rgba(8, 14, 26, 0.58);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: border-color var(--transition-fast), background-color var(--transition-fast), transform var(--transition-fast);
-}
-
-.hero-badges span::before {
-  content: "";
-  width: 0.4rem;
-  height: 0.4rem;
-  border-radius: 999px;
-  background: var(--gradient-brand);
-  box-shadow: 0 0 10px rgba(79, 140, 255, 0.35);
-  flex: 0 0 auto;
-}
-
-.hero-badges span:hover {
-  border-color: var(--accent-strong);
-  background: rgba(79, 140, 255, 0.1);
-  transform: translateY(-1px);
-}
-
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -96,11 +56,13 @@
 }
 
 .hero-metrics strong {
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.1rem;
   color: var(--text);
   font-family: var(--display);
-  font-size: 0.98rem;
-  line-height: 1.2;
+  font-size: 1.85rem;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
 }
 
 .hero-metrics span {
